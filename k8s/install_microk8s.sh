@@ -1,12 +1,14 @@
 #!/bin/sh
 
-# Install snapd
-sudo apt update
-sudo apt install snapd
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	sudo apt update
+	sudo apt install snapd
+	sudo snap install microk8s --classic
 
-# Install microk8s
-sudo snap install microk8s --classic
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install ubuntu/microk8s/microk8s
+	microk8s install
+fi
+
 microk8s status --wait-ready
-
-# Enable services/plugins
 microk8s enable dns registry istio

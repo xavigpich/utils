@@ -1,4 +1,7 @@
 #!/bin/sh
+#
+# See https://microk8s.io/#install-microk8s
+#
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	sudo apt update

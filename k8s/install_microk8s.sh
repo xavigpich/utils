@@ -6,7 +6,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	sudo snap install microk8s --classic
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install ubuntu/microk8s/microk8s
+	brew install ubuntu/microk8s/microk8s
 	microk8s install
 fi
 
